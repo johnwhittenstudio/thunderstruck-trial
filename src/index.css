@@ -7,6 +7,8 @@
   font-family: "Allerta";
   color: #ffffff;
 }
+
+/* Navbar */
 .navbar {
   padding: 20px;
   display: flex;
@@ -19,6 +21,8 @@
 }
 .navbar h1 {
   color: #ffffff;
+  letter-spacing: 4px;
+  /* padding-left: 37%; */
 }
 .navbar .links {
   margin-left: auto;
@@ -33,9 +37,131 @@
   color: #f1356d;
 }
 
-.navbar .changeColor:hover {
-  color: #f1356d;
+
+/* Flash loop from transparent to opaque */
+/* .flash a:hover{ */
+.flash {
+  background: linear-gradient(90deg, #000, #fff, #000);
+  /* letter-spacing: 4px; */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-repeat: no-repeat;
+  /* background-repeat: repeat; */
+  background-size: 80%;
+  animation: shine 9s linear infinite;
+  position: relative;
 }
+
+@keyframes shine {
+  0% {
+    background-position-x: -500%;
+  }
+  100% {
+    background-position-x: 500%;
+  }
+}
+
+
+
+/* Flashing neon blink */
+.shine a:hover{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  padding: 12px 48px;
+  color: #ffffff;
+  background: linear-gradient(to right, #4d4d4d 0, white 10%, #4d4d4d 20%);
+  background-position: 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s infinite linear;
+  animation-fill-mode: forwards;
+  -webkit-text-size-adjust: none;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  white-space: nowrap;
+    
+@keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 180px;
+  }
+  100% {
+    background-position: 180px;
+  }
+}
+}
+
+/* Metallic shimmer, loops once */
+  .shimmer a:hover{
+		text-align: center;
+		color: rgba(255, 255, 255, 0.1);
+		background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+		background: -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+		background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+		-webkit-background-size: 125px 100%;
+		-moz-background-size: 125px 100%;
+		background-size: 125px 100%;
+		-webkit-background-clip: text;
+		-moz-background-clip: text;
+		background-clip: text;
+		-webkit-animation-name: shimmer;
+		-moz-animation-name: shimmer;
+		animation-name: shimmer;
+		-webkit-animation-duration: 1s;
+		-moz-animation-duration: 1s;
+		animation-duration: 1s;
+		-webkit-animation-iteration-count:infinite;
+		-moz-animation-iteration-count: infinite;
+		animation-iteration-count:infinite;
+		background-repeat: repeat;
+		background-position: 0 0;
+		background-color: #222;
+}
+
+@-moz-keyframes shimmer {
+		0% {
+				background-position: top left;
+		}
+		100% {
+				background-position: top right;
+		}
+}
+
+@-webkit-keyframes shimmer {
+		0% {
+				background-position: top left;
+		}
+		100% {
+				background-position: top right;
+		}
+}
+
+@-o-keyframes shimmer {
+		0% {
+				background-position: top left;
+		}
+		100% {
+				background-position: top right;
+		}
+}
+
+@keyframes shimmer {
+		0% {
+				background-position: top left;
+		}
+		100% {
+				background-position: top right;
+		}
+}
+
+
+
 
 .content {
   max-width: 400px;
@@ -46,6 +172,8 @@
 body {
   background-color: #191D1F;
 }
+
+
 
 /* blog previews / list */
 .card-body {

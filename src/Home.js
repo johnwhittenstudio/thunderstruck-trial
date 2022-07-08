@@ -24,7 +24,7 @@ const particleOptions: ParticleOptions = {
   }
 };
 
-const motionForce = (x: number, y: number): ParticleForce => {
+const motionForce = (x, y): ParticleForce => {
   return forces.disturbance(x, y, 5);
 };
 
